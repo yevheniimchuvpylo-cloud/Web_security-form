@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Налаштування безпеки</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+	<main class="container">
+		<h1>Налаштування безпеки</h1>
+
+		<div class="content-layout">
+
+			<figure class="security-status">
+				<img src="img/Vector.svg" alt="Ілюстрація захисту">
+				<figcaption>
+					<strong>Статус: Захищено</strong>
+					<p>Двофакторна автентифікація активна</p>
+				</figcaption>
+			</figure>
+
+			<formF class="security-form" action="" method="">
+
+				<fieldset>
+					<legend>Зміна пароля</legend>
+
+					<div class="form-group">
+						<label for="current-password">Поточний пароль</label>
+						<input type="password" id="current-password" name="current_password" placeholder=" " minlength="8"
+							pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z0-9!@#$%^&*]{8,}$"
+							title="Пароль має містити щонайменше 8 символів латиниці: велику, малу літеру та цифру"
+							autocomplete="off" required>
+					</div>
+
+					<div class="form-group">
+						<label for="new-password">Новий пароль</label>
+						<input type="password" id="new-password" name="new_password" class="password-field" placeholder=" "
+							minlength="8" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z0-9!@#$%^&*]{8,}$"
+							title="Лише латиниця, від 8 символів (велика, мала літера, цифра)"
+							aria-describedby="new-pass-rules" required>
+						<small id="new-pass-rules" class="hint">Від 8 символів латиниці (велика, мала літера, цифра).</small>
+					</div>
+				</fieldset>
+
+				<fieldset>
+					<legend>Двофакторне підтвердження</legend>
+					<div class="form-group">
+						<label for="two-factor-code">Код підтвердження</label>
+						<input type="text" id="two-factor-code" name="two_factor_code" placeholder=" " inputmode="numeric"
+							pattern="[0-9]{6}" maxlength="6" title="Код повинен складатися рівно з 6 цифр"
+							autocomplete="one-time-code" aria-describedby="code-hint" required>
+						<small id="code-hint" class="hint">6 цифр із додатка-автентифікатора.</small>
+					</div>
+				</fieldset>
+
+				<button type="submit">Оновити пароль</button>
+			</formF>
+		</div>
+	</main>
+
+</body>
+
+</html>
